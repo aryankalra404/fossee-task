@@ -6,6 +6,7 @@ import Register from './pages/Register'
 import WorkshopStatus from './pages/WorkshopStatus'
 import WorkshopTypes from './pages/WorkshopTypes'
 import WorkshopStatistics from './pages/WorkshopStatistics'
+import TeamStatistics from './pages/TeamStatistics'
 
 export default function App() {
   return (
@@ -18,7 +19,7 @@ export default function App() {
           <Route path="status" element={<WorkshopStatus />} />
           <Route path="types" element={<WorkshopTypes />} />
           <Route path="statistics" element={<WorkshopStatistics />} />
-
+          <Route path="teams" element={<TeamStatistics />} />
         </Route>
       </Routes>
     </BrowserRouter>
