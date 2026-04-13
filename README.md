@@ -62,15 +62,15 @@ npm run dev
 |---|---|
 | ![before](./screenshots/old-homepage.jpeg) | ![after](./screenshots/homepage-desktop.png)(./screenshots/homepage-mobile.png) |
 
-### Login Page
+### Workshop Statistics Page
 | Before | After |
 |---|---|
-| ![before]() | ![after]() |
+| ![before](./screenshots/old-workshopstatistics.jpeg) | ![after](./screenshots/workshopstatistics-desktop.png)(./screenshots/-mobile.png) |
 
 ### Navbar
 | Before | After |
 |---|---|
-| ![before]() | ![after]() |
+| ![before](./screenshots/old-navbar.png) | ![after](./screenshots/navbar.png) |
 
 > Screenshots are in the `/screenshots` folder.
 
