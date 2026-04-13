@@ -55,22 +55,11 @@ npm run dev
 
 ---
 
-## Before & After
-
-### Home Page
-| Before | After |
-|---|---|
-| ![before](./screenshots/old-homepage.jpeg) | ![after](./screenshots/homepage-desktop.png)(./screenshots/homepage-mobile.png) |
-
-### Workshop Statistics Page
-| Before | After |
-|---|---|
-| ![before](./screenshots/old-workshopstatistics.jpeg) | ![after](./screenshots/workshopstatistics-desktop.png)(./screenshots/-mobile.png) |
-
-### Navbar
-| Before | After |
-|---|---|
-| ![before](./screenshots/old-navbar.png) | ![after](./screenshots/navbar.png) |
+| Page | Before | After (Desktop & Mobile) |
+|---|---|---|
+| **Home Page** | ![before](./screenshots/old-homepage.jpeg) | ![desktop](./screenshots/homepage-desktop.png) <br/> ![mobile](./screenshots/homepage-mobile.png) |
+| **Workshop Statistics** | ![before](./screenshots/old-workshopstatistics.jpeg) | ![desktop](./screenshots/workshopstatistics-desktop.png) <br/> ![mobile](./screenshots/workshopstatistics-mobile.png) |
+| **Navbar** | ![before](./screenshots/old-navbar.png) | ![after](./screenshots/navbar.png) |
 
 > Screenshots are in the `/screenshots` folder.
 
