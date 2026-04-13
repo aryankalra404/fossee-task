@@ -60,7 +60,7 @@ npm run dev
 ### Home Page
 | Before | After |
 |---|---|
-| ![before](./screenshots/old-homepage.png) | ![after](./screenshots/homepage-desktop.png) |
+| ![before](./screenshots/old-homepage.jpeg) | ![after](./screenshots/homepage-desktop.png) |
 
 ### Login Page
 | Before | After |
