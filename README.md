@@ -77,11 +77,14 @@ npm run dev
 
 ## Accessibility & SEO
 
-Semantic Structure: Used proper <header>, <nav>, <main>, and <footer> tags to ensure screen readers can navigate the page structure logically.
+**Semantic Structure:**
+Used proper `<header>`, `<nav>`, `<main>`, and `<footer>` tags to ensure screen readers can navigate the page structure logically.
 
-Form Usability: Every input is paired with a <label> and uses htmlFor to ensure large, accessible click targets.
+**Form Usability:**
+Every input is paired with a `<label>` and uses `htmlFor` to ensure large, accessible click targets.
 
-Color Contrast: Verified that the FOSSEE Orange (#e85d04) meets contrast requirements against white backgrounds for readability.
+**Color Contrast:**
+Verified that the FOSSEE Orange (`#e85d04`) meets contrast requirements against white backgrounds for readability.
 
 ---
 
