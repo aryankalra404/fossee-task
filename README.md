@@ -42,6 +42,8 @@ npm run dev
 | No animations | Kept load times fast, no unnecessary JS |
 | Tailwind over CSS modules | Faster to build, classes can get verbose but readable |
 | React Router for navigation | Adds a dependency but gives clean client-side routing |
+| Custom SVG/Flexbox Charts | Chose to build custom data visualizations instead of importing a library like Chart.js. This saved ~50KB in bundle size, ensuring the site remains lightweight for students on slower 3G/4G networks. |
+| Client-Side Pagination | Implemented pagination via state slicing. While server-side is better for massive datasets, client-side pagination keeps the UX "snappy" for the current workshop volume. |
 
 ---
 
@@ -55,6 +57,12 @@ npm run dev
 
 ---
 
+**The Data-Density Challenge**: The original Django templates used dense tables that are impossible to read on a mobile device.
+
+**My Approach**: I implemented a Conditional Layout Strategy. On desktop, I kept the semantic table for efficiency. On mobile, I refactored the data into a Card-based UI with clear visual anchors (like the colored status badges). This ensures that critical info like "Workshop Date" and "Status" is the first thing a student sees without needing to zoom or scroll horizontally.
+
+---
+
 | Page | Before | After (Desktop & Mobile) |
 |---|---|---|
 | **Home Page** | ![before](./screenshots/old-homepage.jpeg) | ![desktop](./screenshots/homepage-desktop.png) <br/> ![mobile](./screenshots/homepage-mobile.png) |
@@ -64,6 +72,16 @@ npm run dev
 > Screenshots are in the `/screenshots` folder.
 
 [Demo Video Link](https://drive.google.com/file/d/1eON_3ezhCRZutN59BEoq_NbliLz19pta/view?usp=sharing)
+
+---
+
+## Accessibility & SEO
+
+Semantic Structure: Used proper <header>, <nav>, <main>, and <footer> tags to ensure screen readers can navigate the page structure logically.
+
+Form Usability: Every input is paired with a <label> and uses htmlFor to ensure large, accessible click targets.
+
+Color Contrast: Verified that the FOSSEE Orange (#e85d04) meets contrast requirements against white backgrounds for readability.
 
 ---
 
