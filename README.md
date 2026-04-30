@@ -3,9 +3,41 @@
 A mobile-first redesign of the FOSSEE Workshops Django web app, rebuilt as a modern React + Tailwind CSS frontend.
 
 ---
-
 ## Setup Instructions
+
+### 1. Backend Setup (Reference System)
+
 ```bash
+# Clone the repository
+git clone https://github.com/aryankalra404/fossee-task
+
+# Install Python 3.11 (macOS)
+brew install python@3.11
+
+# Create and activate virtual environment
+python3.11 -m venv .venv
+source .venv/bin/activate
+
+# Install requirements
+pip install -r requirements.txt
+
+# Database initialization and sync
+python manage.py makemigrations
+python manage.py migrate
+
+# --run-syncdb solves 'OperationalError' issues with missing CMS tables.
+python manage.py migrate --run-syncdb
+
+# Start the Django server
+python manage.py runserver
+```
+
+### 2. Frontend Setup (React Application)
+
+```bash
+# Navigate to the frontend directory
+cd fossee-task/frontend
+
 # Install dependencies
 npm install
 
@@ -15,7 +47,7 @@ npm run dev
 
 ---
 
-## Design Principles
+## What design principles guided your improvements?
 
 - **Mobile-first**: Every page was built for small screens first, then scaled up. As it was mentioned the website is primarily accessed on phones.
 - **Visual hierarchy**: Clear headings, muted secondary text, and consistent spacing guide the eye naturally.
@@ -25,7 +57,7 @@ npm run dev
 
 ---
 
-## Responsiveness
+## How did you ensure responsiveness across devices?s
 
 - Tailwind's responsive prefixes (`md:`, `sm:`) used throughout, navbar collapses to hamburger on mobile, grids stack to single column.
 - Tested on iPhone 12 Pro (390px) using Chrome DevTools.
@@ -34,7 +66,7 @@ npm run dev
 
 ---
 
-## Trade-offs
+## What trade-offs did you make between the design and performance?
 
 | Decision | Trade-off |
 |---|---|
@@ -47,19 +79,32 @@ npm run dev
 
 ---
 
-## Challenges
+## What was the most challenging part of the task and how did you approach it?
 
-**Biggest challenge**: Getting Tailwind v3 working with Vite from scratch. The `content` array in `tailwind.config.js` was empty by default, so no styles were generating. Solved by pointing it to `./src/**/*.{js,jsx}`.
+**1. Tailwind CSS JIT Configuration**
 
-**Second challenge**: Rebuilding the Django template's dynamic data (user auth, workshop lists, comments) as static React state, had to think carefully about component structure so it's easy to wire up to a real API later.
+**The Problem:** Initially, Tailwind styles were not generating because the `content` array in `tailwind.config.js` was empty by default.
 
-**Approach**: I rebuilt the legacy Django UI into modular React components with a strict mobile-first mindset. Since the web is mostly used on mobile, I prioritized responsive card layouts over heavy tables, using Tailwind to ensure the site is snappy, accessible, and aligned with FOSSEE’s official branding.
+**The Solution:** Configured the Just-In-Time (JIT) engine to scan the source directory by pointing it to `./src/**/*.{js,jsx,ts,tsx}`, ensuring only used styles were injected into the final bundle.
 
 ---
 
-**The Data-Density Challenge**: The original Django templates used dense tables that are impossible to read on a mobile device.
+**2. State-Driven Architecture (Django to React)**
 
-**My Approach**: I implemented a Conditional Layout Strategy. On desktop, I kept the semantic table for efficiency. On mobile, I refactored the data into a Card-based UI with clear visual anchors (like the colored status badges). This ensures that critical info like "Workshop Date" and "Status" is the first thing a student sees without needing to zoom or scroll horizontally.
+**The Problem:** Translating a server-side rendered (Django) workflow — complete with user authentication and workshop lists — into a client-side React environment without a live backend.
+
+**The Solution:** Architected a modular state management system using React Hooks. Data structures were modeled to mirror potential JSON responses, ensuring the frontend is "API-ready" for future integration with the FOSSEE backend.
+
+---
+
+**3. The Data-Density Challenge (Mobile UX)**
+
+**The Problem:** The original legacy interface relied on dense tables that caused horizontal scrolling and poor legibility on mobile devices.
+
+**The Solution:** Implemented a Conditional Layout Strategy:
+
+- **Desktop:** Retained semantic `<table>` elements for high-density data viewing.
+- **Mobile:** Developed a custom Card UI that surfaces critical metadata (e.g., Workshop Status, Dates) through visual anchors and color-coded badges, eliminating horizontal overflow and improving accessibility.
 
 ---
 
@@ -100,6 +145,42 @@ Verified that the FOSSEE Orange (`#e85d04`) meets contrast requirements against 
 - Propose Workshop
 - Workshop Details
 - View Profile
+
+---
+
+## Project Structure
+
+```
+fossee-task/
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+└── src/
+    ├── App.css
+    ├── App.jsx
+    ├── index.css
+    ├── main.jsx
+    ├── components/
+    │   ├── Footer.jsx
+    │   └── Navbar.jsx
+    ├── layouts/
+    │   └── MainLayout.jsx
+    └── pages/
+        ├── Home.jsx
+        ├── Login.jsx
+        ├── ProposeWorkshop.jsx
+        ├── Register.jsx
+        ├── TeamStatistics.jsx
+        ├── ViewProfile.jsx
+        ├── WorkshopDetails.jsx
+        ├── WorkshopStatistics.jsx
+        ├── WorkshopStatus.jsx
+        └── WorkshopTypes.jsx
+```
 
 ---
 
