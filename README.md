@@ -57,7 +57,7 @@ npm run dev
 
 ---
 
-## How did you ensure responsiveness across devices?
+## How did you ensure responsiveness across devices?s
 
 - Tailwind's responsive prefixes (`md:`, `sm:`) used throughout, navbar collapses to hamburger on mobile, grids stack to single column.
 - Tested on iPhone 12 Pro (390px) using Chrome DevTools.
@@ -153,33 +153,156 @@ Verified that the FOSSEE Orange (`#e85d04`) meets contrast requirements against 
 ```
 fossee-task/
 ├── README.md
-├── eslint.config.js
-├── index.html
-├── package.json
-├── postcss.config.js
-├── tailwind.config.js
-├── vite.config.js
-└── src/
-    ├── App.css
-    ├── App.jsx
-    ├── index.css
-    ├── main.jsx
-    ├── components/
-    │   ├── Footer.jsx
-    │   └── Navbar.jsx
-    ├── layouts/
-    │   └── MainLayout.jsx
-    └── pages/
-        ├── Home.jsx
-        ├── Login.jsx
-        ├── ProposeWorkshop.jsx
-        ├── Register.jsx
-        ├── TeamStatistics.jsx
-        ├── ViewProfile.jsx
-        ├── WorkshopDetails.jsx
-        ├── WorkshopStatistics.jsx
-        ├── WorkshopStatus.jsx
-        └── WorkshopTypes.jsx
+├── LICENSE
+├── local_settings.py
+├── manage.py
+├── requirements.txt
+├── cms/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
+│   └── templates/
+│       └── cms_base.html
+├── docs/
+│   └── Getting_Started.md
+├── frontend/           # react frontend
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   ├── vite.config.js
+│   └── src/
+│       ├── App.css
+│       ├── App.jsx
+│       ├── index.css
+│       ├── main.jsx
+│       ├── components/
+│       │   ├── Footer.jsx
+│       │   └── Navbar.jsx
+│       ├── layouts/
+│       │   └── MainLayout.jsx
+│       └── pages/
+│           ├── Home.jsx
+│           ├── Login.jsx
+│           ├── ProposeWorkshop.jsx
+│           ├── Register.jsx
+│           ├── TeamStatistics.jsx
+│           ├── ViewProfile.jsx
+│           ├── WorkshopDetails.jsx
+│           ├── WorkshopStatistics.jsx
+│           ├── WorkshopStatus.jsx
+│           └── WorkshopTypes.jsx
+├── statistics_app/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   ├── templates/
+│   │   └── statistics_app/
+│   │       ├── paginator.html
+│   │       ├── profile_stats.html
+│   │       ├── team_stats.html
+│   │       ├── workshop_public_stats.html
+│   │       └── workshop_stats.html
+│   └── tests/
+│       ├── __init__.py
+│       └── test_views.py
+├── teams/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── workshop_app/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── reminder_script.py
+│   ├── reminder_script.sh
+│   ├── send_mails.py
+│   ├── urls.py
+│   ├── urls_password_reset.py
+│   ├── views.py
+│   ├── migrations/
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_auto_20170623_1513.py
+│   │   ├── 0003_auto_20170906_1501.py
+│   │   ├── 0004_auto_20170914_1528.py
+│   │   ├── 0005_auto_20170920_1720.py
+│   │   ├── 0006_auto_20180312_1056.py
+│   │   ├── 0007_auto_20180510_1635.py
+│   │   ├── 0008_auto_20180514_1655.py
+│   │   ├── 0009_profilecomments.py
+│   │   ├── 0010_auto_20190926_1558.py
+│   │   ├── 0011_auto_20200727_2313.py
+│   │   ├── 0012_auto_20200727_2315.py
+│   │   ├── 0013_workshop_uid.py
+│   │   ├── 0014_auto_20200727_2334.py
+│   │   ├── 0015_auto_20200727_2334.py
+│   │   ├── 0016_auto_20260501_0447.py
+│   │   └── __init__.py
+│   ├── static/
+│   │   └── workshop_app/
+│   │       ├── css/
+│   │       │   ├── base.css
+│   │       │   ├── font-awesome.css
+│   │       │   └── jquery-ui.css
+│   │       ├── fonts/
+│   │       │   ├── glyphicons-halflings-regular.eot
+│   │       │   ├── glyphicons-halflings-regular.ttf
+│   │       │   └── glyphicons-halflings-regular.woff
+│   │       └── js/
+│   │           ├── datepicker.js
+│   │           └── jquery.formset.js
+│   ├── templates/
+│   │   ├── registration/
+│   │   │   ├── password_change_done.html
+│   │   │   ├── password_change_form.html
+│   │   │   ├── password_reset_complete.html
+│   │   │   ├── password_reset_confirm.html
+│   │   │   ├── password_reset_done.html
+│   │   │   └── password_reset_form.html
+│   │   └── workshop_app/
+│   │       ├── activation.html
+│   │       ├── add_workshop_type.html
+│   │       ├── base.html
+│   │       ├── edit_profile.html
+│   │       ├── edit_workshop_type.html
+│   │       ├── login.html
+│   │       ├── logout.html
+│   │       ├── propose_workshop.html
+│   │       ├── register.html
+│   │       ├── view_profile.html
+│   │       ├── workshop_details.html
+│   │       ├── workshop_status_coordinator.html
+│   │       ├── workshop_status_instructor.html
+│   │       ├── workshop_type_details.html
+│   │       └── workshop_type_list.html
+│   ├── templatetags/
+│   │   ├── __init__.py
+│   │   └── custom_filters.py
+│   └── tests/
+│       ├── __init__.py
+│       ├── test_models.py
+│       └── test_views.py
+└── workshop_portal/
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    ├── views.py
+    └── wsgi.py
+
 ```
 
 ---
