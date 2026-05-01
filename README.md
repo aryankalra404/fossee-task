@@ -57,7 +57,7 @@ npm run dev
 
 ---
 
-## How did you ensure responsiveness across devices?s
+## How did you ensure responsiveness across devices?
 
 - Tailwind's responsive prefixes (`md:`, `sm:`) used throughout, navbar collapses to hamburger on mobile, grids stack to single column.
 - Tested on iPhone 12 Pro (390px) using Chrome DevTools.
